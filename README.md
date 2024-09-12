@@ -8,10 +8,13 @@ SKN2기 9월 단위프로젝트
 
 #  프로젝트
 👨‍🏫 프로젝트 실행
+
 프로젝트 실행 방법
+
 pip install -r requirements.txt
 
 크롤링서버 실행 
+
 cd crolling_server
 uvicorn main:app --reload
 
