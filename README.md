@@ -13,6 +13,9 @@ SKN2기 9월 단위프로젝트
 
 pip install -r requirements.txt
 
+메인서버 실행
+python3 manage.py runserver
+
 크롤링서버 실행 
 
 cd crolling_server
