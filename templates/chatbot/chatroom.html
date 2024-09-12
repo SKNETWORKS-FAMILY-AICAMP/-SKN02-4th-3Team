@@ -25,8 +25,8 @@
                 <div class="d-flex w-100 justify-content-between" style="height: 8%;">
                     <p class="h5 m-0 p-3 align-self-center">History</p>
 
-                    <button type="button" class="btn btn-primary my-3 mx-1" id="new-chat" onclick="save()">새 대화</button>
-                    <!-- <p class="h3 m-0 p-0 align-self-center">📑</p> -->
+                    <button type="button" class="btn btn-primary my-3 mx-1" data-bs-toggle="modal"
+                        data-bs-target="#new-chat">새 대화</button>
                 </div>
                 <div class="w-100" style="position: absolute; overflow-y: scroll; height: 92%; padding: 20px;">
                     <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
@@ -38,7 +38,7 @@
                                 of the card's content.</p>
                         </div>
                     </div>
-                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
+                    <div class="card history text-dark bg-light mb-3" onclick="location.href('/chatroom/')">
                         <div class="card-header">2024년 9월 11일에 만든 대화</div>
                         <div class="card-body">
                             <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
@@ -123,55 +123,21 @@
                 </div>
                 <div class="w-100 p-0" style="position: relative; height: 80%;">
                     <div id="chat-area" class="h-100 w-100">
+                        
                         <div class="chat chat-by-chatbot">
                             <p class="h4">🤖</p>
                             <div class="card me-auto">
                                 <div class="card-body">
-                                    <div class="card-text">챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게</div>
-                                    <div class="card-text">챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게</div>
-                                    <div class="card-text">챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게</div>
-                                    <div class="card-text">챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게</div>
+                                    <div class="card-text">
+                                        당신을 위한 주식 챗봇입니다.<br/>
+                                        궁금한 내용을 입력해주세요!
+                                    </div>
                                 </div>
                             </div>
-                            <p class="text-start">2024-09-11 14:21</p>
-                        </div>
-                        <div class="chat chat-by-user">
-                            <div class="card ms-auto">
-                                <div class="card-body">
-                                    <div class="card-text">유저 내용<br />유저 내용<br />유저 내용</div>
-                                </div>
-                            </div>
-                            <p class="text-end">2024-09-11 14:21</p>
-                        </div>
-                        <div class="chat chat-by-chatbot">
-                            <p class="h4">🤖</p>
-                            <div class="card me-auto">
-                                <div class="card-body">
-                                    <div class="card-text">챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더
-                                        길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게
-                                        더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길
-                                        게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더
-                                        길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게
-                                        더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇
-                                        내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더
-                                        길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길
-                                        게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더
-                                        길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게
-                                        더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더
-                                        길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게
-                                        더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇
-                                        내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더
-                                        길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길
-                                        게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더
-                                        길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게
-                                        더 길 게</div>
-                                </div>
-                            </div>
-                            <p class="text-start">2024-09-11 14:21</p>
                         </div>
                     </div>
                 </div>
-                <div class="row w-100" style="position: relative; height: 10%; padding: 0 15%;">
+                <div class="row w-100" style="position: relative; height: 9%; padding: 0 15%;">
                     <div class="input-group align-self-center">
                         <button class="btn btn-outline-secondary" type="button" id="button-speak">🎙️</button>
                         <input type="text" class="form-control" placeholder="주식 챗봇입니다. 궁금한 점을 물어보세요!"
@@ -180,8 +146,8 @@
                             onclick="send()">보내기</button>
                     </div>
                 </div>
-                <div class="w-100" style="height: 3%;">
-                    <p class="text-center">주식 챗봇 powered by OpenAI</p>
+                <div class="w-100" style="height: 4%;">
+                    <p class="text-center text-muted">주식 챗봇 powered by OpenAI</p>
                 </div>
             </div>
         </div>
@@ -209,7 +175,28 @@
         </div>
     </div>
 
+    <div class="modal fade" id="new-chat" tabindex="-1" aria-labelledby="new-chatLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="new-chatLabel">새 대화를 여시겠습니까?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>기존 대화 내용을 저장하고 새 대화를 시작합니다.<br />
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="save()">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
+        var message_list = []
+
         var input = document.querySelector('#user-input');
         input.addEventListener("keyup", function(e) {
             if (e.key == 'Enter') {
@@ -286,7 +273,7 @@
                         <div class="card-text">${user_message}</div>
                     </div>
                 </div>
-                <p class="text-end">${ getDateTime() }</p>
+                <p class="text-end timestamp">${ getDateTime() }</p>
             `;
             chat_area.appendChild(message);
             chat_area.scrollTop = chat_area.scrollHeight;
@@ -307,11 +294,11 @@
             })
             .then(async (res) => {
                 data = await res.json()
-                get_answer(data.content)
+                before_get_answer(data.content)
             });
         }
 
-        async function get_answer(user_msg) {
+        async function before_get_answer(user_msg) {
             chat_area = document.querySelector('#chat-area');
 
             message = document.createElement('div');
@@ -335,7 +322,9 @@
             `
             chat_area.scrollTop = chat_area.scrollHeight;
             
-            chatbot_message = await example()
+            chatbot_data = await get_answer(user_msg)
+            console.log(chatbot_data)
+
             csrftoken = getCookie('csrftoken');
             await fetch('/chatroom/msg_save/', {
                 method: 'POST',
@@ -346,39 +335,48 @@
                 body: JSON.stringify({
                     'chat_id': "{{ chat_id }}",
                     'sender': 'chatbot',
-                    'content': chatbot_message
+                    'content': chatbot_data.response
                 })
             })
             .then(async (res) => {
                 data = await res.json()
-                writing_answer(data)
-            });
+                writing_answer(message, chatbot_data, data)
+            })
         }
 
-        async function example() {
-            await sleep(3000)
-            return 'example test!'
+        async function get_answer(user_msg) {
+            csrftoken = getCookie('csrftoken');
+            const response = await fetch('/chatroom/chatbot_answer/', {
+                method: 'POST',
+                headers: {
+                    "content-type": 'application/json',
+                    "X-CSRFToken": csrftoken
+                },
+                body: JSON.stringify({
+                    'user_msg': user_msg
+                })
+            })
+            const result = await response.json()
+            return result
         }
 
-        function writing_answer(data) {
-            console.log(data)
+        function writing_answer(node, data, saved_res) {
             chat_area = document.querySelector('#chat-area');
             
-            writing_area = message.querySelector('.card-body');
+            writing_area = node.querySelector('.card-body');
             writing_area.innerHTML = `
             <div class="card-text"></div>
             `
 
             text_area = writing_area.querySelector('.card-text');
-            text_area.innerText = data.content
+            text_area.innerHTML = data.markdown
             
             message_time = document.createElement('p')
-            message_time.classList.add("text-start")
-            message_time.innerText = getDateTime(new Date(data.time_str.split('"')[1]))
-            chat_area.appendChild(message_time)
+            message_time.classList.add("text-start", "timestamp")
+            message_time.innerText = getDateTime(new Date(saved_res.time_str.split('"')[1]))
+            node.appendChild(message_time)
             
             chat_area.scrollTop = chat_area.scrollHeight;
-            
         }
 
         function sleep(ms) {

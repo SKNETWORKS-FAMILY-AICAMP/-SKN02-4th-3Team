@@ -52,7 +52,15 @@ p {
 }
 
 .card .card-body .card-text {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+}
+
+.card-text * {
+    font-size: 1.1rem;
+}
+
+.timestamp {
+    font-size: 0.9rem;
 }
 
 #chat-area .chat .card {

@@ -4,7 +4,12 @@ from django.contrib.auth.decorators import login_required
 from django.forms.models import model_to_dict
 from django.views.decorators.csrf import csrf_protect
 from django.shortcuts import render, redirect
+from .openai_chatbot import get_answer_from_rag_chain as chatbot
+
 import json
+
+import markdown
+from django.utils.safestring import mark_safe
 
 from .models import Chat, Message
 
@@ -56,4 +61,16 @@ def message_save(request):
     data = model_to_dict(m)
     time_string = json.dumps(m.sended_at.isoformat())
     data['time_str'] = time_string
+    return JsonResponse(data)
+
+def chatbot_response(request):
+    body = json.loads(request.body)
+    user_msg = body["user_msg"]
+
+    response = chatbot(user_msg)
+
+    extensions = ["nl2br", "fenced_code"]
+    res_md = mark_safe(markdown.markdown(response, extensions=extensions))
+
+    data = {"response": response, "markdown": res_md}
     return JsonResponse(data)
