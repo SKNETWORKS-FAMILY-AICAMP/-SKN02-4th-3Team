@@ -79,7 +79,7 @@ DATABASES = {
         # MySQL
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'read_default_file': str(BASE_DIR / 'mysql.cnf')
+            'read_default_file': str(BASE_DIR / 'mysql.cnf'), 
         }
         
         # #SQLite3
@@ -131,3 +131,5 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = '/'

@@ -29,85 +29,30 @@
                         data-bs-target="#new-chat">새 대화</button>
                 </div>
                 <div class="w-100" style="position: absolute; overflow-y: scroll; height: 92%; padding: 20px;">
-                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
-                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
+                    {% if chat_list %}
+                    {% for dict in chat_list %}
+                    <div class="card history text-dark bg-light mb-3" onclick='location.href="/chatroom/{{ dict.chat.id }}"'>
+                        <div class="card-header">{{ dict.chat.created_at.year }}년 {{ dict.chat.created_at.month }}월 {{ dict.chat.created_at.day }}일에 만든 대화</div>
                         <div class="card-body">
-                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
-                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
-                                make up the bulk
-                                of the card's content.</p>
+                            <h5 class="card-title text-truncate">{{ dict.question.content }}</h5>
+                            <p class="card-text custom-truncate">{{ dict.answer.content }}</p>
                         </div>
                     </div>
-                    <div class="card history text-dark bg-light mb-3" onclick="location.href('/chatroom/')">
-                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
+                    {% endfor %}
+                    {% else %}
+                    <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
-                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
-                                make up the bulk
-                                of the card's content.</p>
+                            <h5 class="text-center">아직 저장된 대화가 없습니다.</h5>
                         </div>
                     </div>
-                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
-                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
-                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
-                                make up the bulk
-                                of the card's content.</p>
-                        </div>
-                    </div>
-                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
-                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
-                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
-                                make up the bulk
-                                of the card's content.</p>
-                        </div>
-                    </div>
-                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
-                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
-                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
-                                make up the bulk
-                                of the card's content.</p>
-                        </div>
-                    </div>
-                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
-                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
-                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
-                                make up the bulk
-                                of the card's content.</p>
-                        </div>
-                    </div>
-                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
-                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
-                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
-                                make up the bulk
-                                of the card's content.</p>
-                        </div>
-                    </div>
-                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
-                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
-                        <div class="card-body">
-                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
-                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
-                                make up the bulk
-                                of the card's content.</p>
-                        </div>
-                    </div>
+                    {% endif %}
                 </div>
             </div>
             <div class="col-lg-10 col-sm-8 min-vh-100 p-0">
                 <div class="w-100" style="height: 7%;">
                     <nav class="navbar navbar-expand-lg navbar-light bg-light h-100">
                         <div class="container-fluid">
-                            <a class="navbar-brand" href="#">🤖 Chatbot</a>
+                            <a class="navbar-brand" href="/">🤖 Chatbot</a>
                             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 </ul>
@@ -135,6 +80,36 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        {% if message_list %}
+                        {% for msg in message_list %}
+                        {% if msg.sender == 'user' %}
+                        <div class="chat chat-by-user">
+                            <div class="card ms-auto">
+                                <div class="card-body">
+                                    <div class="card-text">{{ msg.content }}</div>
+                                </div>
+                            </div>
+                            <p class="text-end timestamp">{{ msg.sended_at }}</p>
+                        </div>
+                        {% else %}
+                        <div class="chat chat-by-chatbot">
+                            <p class="h4">🤖</p>
+                            <div class="card me-auto">
+                                <div class="card-body">
+                                    <div class="card-text">
+                                        {% autoescape off %}
+                                        {{ msg.markdown }}
+                                        {% endautoescape %}
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="text-start timestamp">{{ msg.sended_at }}</p>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        {% endif %}
+                        
                     </div>
                 </div>
                 <div class="row w-100" style="position: relative; height: 9%; padding: 0 15%;">
@@ -195,7 +170,10 @@
     </div>
 
     <script>
-        var message_list = []
+        window.onload = function() {
+            chat_area = document.querySelector('#chat-area');
+            chat_area.scrollTop = chat_area.scrollHeight;
+        }
 
         var input = document.querySelector('#user-input');
         input.addEventListener("keyup", function(e) {
@@ -214,7 +192,7 @@
             const minutes = currentDate.getMinutes();
             const seconds = currentDate.getSeconds();
 
-            const formattedDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')} ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+            const formattedDate = `${year}년 ${month}월 ${day}일 ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
             return formattedDate
         }
         // 날짜와 시간을 문자열로 포맷팅
@@ -235,9 +213,7 @@
         }
 
         function remove() {
-            document.getElementById('chat-area').innerHTML = '';
-            var myModal = new bootstrap.Modal(document.getElementById('myModal'), { keyboard: false });
-            myModal.hide();
+            location.href = "/";
         }
 
         function save() {
@@ -289,7 +265,8 @@
                 body: JSON.stringify({
                     'chat_id': "{{ chat_id }}",
                     'sender': 'user',
-                    'content': user_message
+                    'content': user_message,
+                    'markdown': user_message
                 })
             })
             .then(async (res) => {
@@ -335,12 +312,13 @@
                 body: JSON.stringify({
                     'chat_id': "{{ chat_id }}",
                     'sender': 'chatbot',
-                    'content': chatbot_data.response
+                    'content': chatbot_data.response,
+                    'markdown': chatbot_data.markdown
                 })
             })
             .then(async (res) => {
                 data = await res.json()
-                writing_answer(message, chatbot_data, data)
+                writing_answer(message, data)
             })
         }
 
@@ -360,7 +338,7 @@
             return result
         }
 
-        function writing_answer(node, data, saved_res) {
+        function writing_answer(node, saved_res) {
             chat_area = document.querySelector('#chat-area');
             
             writing_area = node.querySelector('.card-body');
@@ -369,7 +347,7 @@
             `
 
             text_area = writing_area.querySelector('.card-text');
-            text_area.innerHTML = data.markdown
+            text_area.innerHTML = saved_res.markdown
             
             message_time = document.createElement('p')
             message_time.classList.add("text-start", "timestamp")

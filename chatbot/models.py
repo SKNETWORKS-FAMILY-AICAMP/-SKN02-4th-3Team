@@ -20,5 +20,8 @@ class Message(models.Model):
     # Chatting content
     content = models.TextField()
 
+    # Chatting Markdown
+    markdown = models.TextField()
+
     # Message Sended Time
     sended_at = models.DateTimeField(auto_now_add=True)
