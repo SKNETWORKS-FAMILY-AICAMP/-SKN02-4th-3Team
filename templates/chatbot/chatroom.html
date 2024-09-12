@@ -1,0 +1,391 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <link href="{% static 'bootstrap/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/chatroom.css' %}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <div class="container min-vh-100 min-vw-100">
+        <div class="row">
+            <div class="col-lg-2 col-sm-4 min-vh-100 p-0 navbar-light bg-light d-none d-sm-block"
+                style="position: relative;">
+                <div class="d-flex w-100 justify-content-between" style="height: 8%;">
+                    <p class="h5 m-0 p-3 align-self-center">History</p>
+
+                    <button type="button" class="btn btn-primary my-3 mx-1" id="new-chat" onclick="save()">새 대화</button>
+                    <!-- <p class="h3 m-0 p-0 align-self-center">📑</p> -->
+                </div>
+                <div class="w-100" style="position: absolute; overflow-y: scroll; height: 92%; padding: 20px;">
+                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
+                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
+                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
+                                make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
+                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
+                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
+                                make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
+                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
+                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
+                                make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
+                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
+                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
+                                make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
+                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
+                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
+                                make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
+                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
+                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
+                                make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
+                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
+                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
+                                make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                    <div class="card history text-dark bg-light mb-3" onclick="alert('!!')">
+                        <div class="card-header">2024년 9월 11일에 만든 대화</div>
+                        <div class="card-body">
+                            <h5 class="card-title text-truncate">오늘의 삼성전자 주가에 대해 알려줘.</h5>
+                            <p class="card-text custom-truncate">Some quick example text to build on the card title and
+                                make up the bulk
+                                of the card's content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-10 col-sm-8 min-vh-100 p-0">
+                <div class="w-100" style="height: 7%;">
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light h-100">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">🤖 Chatbot</a>
+                            <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                </ul>
+                                <form class="d-flex">
+                                    <button class="btn btn-outline-success me-2" type="button" data-bs-toggle="modal"
+                                        data-bs-target="#removeModal">지우기</button>
+                                    <button class="btn btn-outline-danger" type="button"
+                                        onclick="location.href='/logout'">로그아웃</button>
+                                </form>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+                <div class="w-100 p-0" style="position: relative; height: 80%;">
+                    <div id="chat-area" class="h-100 w-100">
+                        <div class="chat chat-by-chatbot">
+                            <p class="h4">🤖</p>
+                            <div class="card me-auto">
+                                <div class="card-body">
+                                    <div class="card-text">챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게</div>
+                                    <div class="card-text">챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게</div>
+                                    <div class="card-text">챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게</div>
+                                    <div class="card-text">챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게</div>
+                                </div>
+                            </div>
+                            <p class="text-start">2024-09-11 14:21</p>
+                        </div>
+                        <div class="chat chat-by-user">
+                            <div class="card ms-auto">
+                                <div class="card-body">
+                                    <div class="card-text">유저 내용<br />유저 내용<br />유저 내용</div>
+                                </div>
+                            </div>
+                            <p class="text-end">2024-09-11 14:21</p>
+                        </div>
+                        <div class="chat chat-by-chatbot">
+                            <p class="h4">🤖</p>
+                            <div class="card me-auto">
+                                <div class="card-body">
+                                    <div class="card-text">챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더
+                                        길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게
+                                        더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길
+                                        게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더
+                                        길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게
+                                        더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇
+                                        내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더
+                                        길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길
+                                        게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더
+                                        길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게
+                                        더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더
+                                        길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게
+                                        더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇
+                                        내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더
+                                        길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길
+                                        게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더
+                                        길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게 더 길 게챗봇 내용 더 길게 더 길게 더 길 게 더 길 게
+                                        더 길 게</div>
+                                </div>
+                            </div>
+                            <p class="text-start">2024-09-11 14:21</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row w-100" style="position: relative; height: 10%; padding: 0 15%;">
+                    <div class="input-group align-self-center">
+                        <button class="btn btn-outline-secondary" type="button" id="button-speak">🎙️</button>
+                        <input type="text" class="form-control" placeholder="주식 챗봇입니다. 궁금한 점을 물어보세요!"
+                            aria-label="주식 챗봇입니다. 궁금한 점을 물어보세요!" aria-describedby="button-addon2" id="user-input">
+                        <button class="btn btn-outline-secondary" type="button" id="button-send"
+                            onclick="send()">보내기</button>
+                    </div>
+                </div>
+                <div class="w-100" style="height: 3%;">
+                    <p class="text-center">주식 챗봇 powered by OpenAI</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="removeModal" tabindex="-1" aria-labelledby="removeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="removeModalLabel">정말로 대화 기록을 지우시겠습니까?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>기존 대화 내용을 저장하지 않고 모두 지웁니다.<br />
+                        대화 내용을 저장하고 새로운 대화를 시작하려면 [새 대화] 버튼을 누르세요.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"
+                        onclick="remove()">지우기</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var input = document.querySelector('#user-input');
+        input.addEventListener("keyup", function(e) {
+            if (e.key == 'Enter') {
+                event.preventDefault();
+                document.querySelector('#button-send').click();
+            }
+        })
+
+        function getDateTime(currentDate = new Date()) {
+            // 각 구성 요소를 가져오기
+            const year = currentDate.getFullYear();
+            const month = currentDate.getMonth() + 1;
+            const day = currentDate.getDate();
+            const hours = currentDate.getHours();
+            const minutes = currentDate.getMinutes();
+            const seconds = currentDate.getSeconds();
+
+            const formattedDate = `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')} ${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
+            return formattedDate
+        }
+        // 날짜와 시간을 문자열로 포맷팅
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+
+        function remove() {
+            document.getElementById('chat-area').innerHTML = '';
+            var myModal = new bootstrap.Modal(document.getElementById('myModal'), { keyboard: false });
+            myModal.hide();
+        }
+
+        function save() {
+            csrftoken = getCookie('csrftoken');
+            fetch('/chatroom/save/', {
+                method: 'POST',
+                headers: {
+                    "content-type": 'application/json',
+                    "X-CSRFToken": csrftoken
+                },
+                body: JSON.stringify({
+                    'chat_id': "{{ chat_id }}"
+                })
+            })
+                .then(res => {
+                    remove()
+                })
+        }
+
+        function send() {
+            user_message = document.querySelector('#user-input').value.trim();
+
+            if (user_message.length === 0) {
+                return;
+            }
+
+            chat_area = document.querySelector('#chat-area');
+            message = document.createElement('div');
+            message.classList.add('chat', 'chat-by-user');
+            message.innerHTML = `
+                <div class="card ms-auto">
+                    <div class="card-body">
+                        <div class="card-text">${user_message}</div>
+                    </div>
+                </div>
+                <p class="text-end">${ getDateTime() }</p>
+            `;
+            chat_area.appendChild(message);
+            chat_area.scrollTop = chat_area.scrollHeight;
+            document.querySelector('#user-input').value = '';
+
+            csrftoken = getCookie('csrftoken');
+            fetch('/chatroom/msg_save/', {
+                method: 'POST',
+                headers: {
+                    "content-type": 'application/json',
+                    "X-CSRFToken": csrftoken
+                },
+                body: JSON.stringify({
+                    'chat_id': "{{ chat_id }}",
+                    'sender': 'user',
+                    'content': user_message
+                })
+            })
+            .then(async (res) => {
+                data = await res.json()
+                get_answer(data.content)
+            });
+        }
+
+        async function get_answer(user_msg) {
+            chat_area = document.querySelector('#chat-area');
+
+            message = document.createElement('div');
+            message.classList.add('chat', 'chat-by-chatbot');
+            message.innerHTML = `
+                <p class="h4">🤖</p>
+                <div class="card me-auto">
+                    <div class="card-body">
+                        <div class="card-text"></div>
+                    </div>
+                </div>
+            `;
+            chat_area.appendChild(message);
+
+            writing_area = message.querySelector('.card-body');
+            writing_area.innerHTML = `
+                <div class="text-center">
+                    <div class="spinner-grow text-dark" role="status"></div>
+                    <p>챗봇이 열심히 자료를 살펴보고 있어요!</p>
+                </div>
+            `
+            chat_area.scrollTop = chat_area.scrollHeight;
+            
+            chatbot_message = await example()
+            csrftoken = getCookie('csrftoken');
+            await fetch('/chatroom/msg_save/', {
+                method: 'POST',
+                headers: {
+                    "content-type": 'application/json',
+                    "X-CSRFToken": csrftoken
+                },
+                body: JSON.stringify({
+                    'chat_id': "{{ chat_id }}",
+                    'sender': 'chatbot',
+                    'content': chatbot_message
+                })
+            })
+            .then(async (res) => {
+                data = await res.json()
+                writing_answer(data)
+            });
+        }
+
+        async function example() {
+            await sleep(3000)
+            return 'example test!'
+        }
+
+        function writing_answer(data) {
+            console.log(data)
+            chat_area = document.querySelector('#chat-area');
+            
+            writing_area = message.querySelector('.card-body');
+            writing_area.innerHTML = `
+            <div class="card-text"></div>
+            `
+
+            text_area = writing_area.querySelector('.card-text');
+            text_area.innerText = data.content
+            
+            message_time = document.createElement('p')
+            message_time.classList.add("text-start")
+            message_time.innerText = getDateTime(new Date(data.time_str.split('"')[1]))
+            chat_area.appendChild(message_time)
+            
+            chat_area.scrollTop = chat_area.scrollHeight;
+            
+        }
+
+        function sleep(ms) {
+            return new Promise((r) => setTimeout(r, ms));
+        }
+
+    </script>
+</body>
+
+</html>
