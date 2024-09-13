@@ -19,6 +19,7 @@ python3 manage.py runserver
 크롤링서버 실행 
 
 cd crolling_server
+uvicorn your_app:app --host 0.0.0.0 --port 8001 
 uvicorn main:app --reload
 
 
