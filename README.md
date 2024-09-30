@@ -1,4 +1,5 @@
 # SKN02-4th-3Team
+#  프로젝트 : RAG LLM 기반 실시간 금융 챗봇 서비스 
 
 [<img width="200px" src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white"/>](https://modern-carver-7cd.notion.site/RAG-LLM-9c67867d336f4047ac8a26aa9ab9dd83)
 
@@ -9,8 +10,6 @@
 | <img width="120px" src="https://github.com/user-attachments/assets/c95175c7-22cb-4c1d-b254-eb500b123ec6" /> | <img width="150px" src="https://github.com/user-attachments/assets/4ae67d2a-4394-4481-98d4-266966a517a8" /> | <img width="160px" src="https://github.com/user-attachments/assets/dff45d59-7454-4c0a-9158-b42e0bcde3b3"/> | <img width="150px" src="https://github.com/user-attachments/assets/87680063-4964-411d-94ba-469dbbb4b7e0" /> 
 |  [@CAP_KOO](https://github.com/developer0826) | [@ACCUSE_KIM](https://github.com/Sesame-Oil)  | [@SUP_WOOK](https://github.com/wjstkddnr) | [@JAMMANBO_LEE](https://github.com/promethevs11) |
 
-
-#  프로젝트 : RAG LLM 기반 실시간 금융 챗봇 서비스 
 
 ## 👨‍🏫 프로젝트 개요
   #### 네이버페이 증권 사이트와 네이버증권 뉴스기사를 10분마다 크롤링하여 저장하고 이를 불러와 GPT4o-mini 모델에 RAG하여 실시간 증권 정보를 제공하는 챗봇
