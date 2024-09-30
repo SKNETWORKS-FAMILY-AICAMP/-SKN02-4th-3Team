@@ -1,5 +1,5 @@
-# SKN02-4th-3Team
-#  프로젝트 : RAG LLM 기반 실시간 금융 챗봇 서비스 
+# RAG LLM 기반 실시간 금융 챗봇 서비스 
+## SKN02-4th-3Team
 
 [<img width="200px" src="https://img.shields.io/badge/notion-000000?style=for-the-badge&logo=notion&logoColor=white"/>](https://modern-carver-7cd.notion.site/RAG-LLM-9c67867d336f4047ac8a26aa9ab9dd83)
 
