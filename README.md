@@ -10,7 +10,7 @@
 |  [@CAP_KOO](https://github.com/developer0826) | [@ACCUSE_KIM](https://github.com/Sesame-Oil)  | [@SUP_WOOK](https://github.com/wjstkddnr) | [@JAMMANBO_LEE](https://github.com/promethevs11) |
 
 
-#  프로젝트
+#  프로젝트 : RAG LLM 기반 실시간 금융 챗봇 서비스 
 
 ## 👨‍🏫 프로젝트 개요
   #### 네이버페이 증권 사이트와 네이버증권 뉴스기사를 10분마다 크롤링하여 저장하고 이를 불러와 GPT4o-mini 모델에 RAG하여 실시간 증권 정보를 제공하는 챗봇
